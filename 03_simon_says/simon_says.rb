@@ -28,3 +28,17 @@ def first_word(a)
   puts a
   return a[0,a.index(' ')]
 end
+
+def titleize(a)
+  littleWords = ["and","the","or","over","a"]
+  puts a
+  a = a.split
+  a.each { |x| x.capitalize!}
+  a.each { |i|
+    if littleWords.include?(i.downcase) && a.rindex(i) > 0
+      i.downcase!
+    end
+  }
+  a[0].capitalize!
+  a.join(" ")
+end
